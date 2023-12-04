@@ -1,0 +1,25 @@
+{
+  "name": "appium-codere",
+  "version": "1.0.0",
+  "description": "Appium tests for the login functionality of the Codere test app.",
+  "scripts": {
+    "tests": "npx mocha test/specs/login.e2e.js",
+    "wdio": "wdio run ./wdio.conf.js"
+  },
+  "author": "profplum700",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/appium-service": "^8.24.6",
+    "@wdio/cli": "^8.24.6",
+    "@wdio/junit-reporter": "^8.24.2",
+    "@wdio/local-runner": "^8.24.6",
+    "@wdio/mocha-framework": "^8.24.6",
+    "appium-uiautomator2-driver": "^2.34.2",
+    "wdio-wait-for": "^3.0.9",
+    "webdriverio": "^8.11.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
