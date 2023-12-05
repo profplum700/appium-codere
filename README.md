@@ -4,7 +4,11 @@ Appium tests for the login functionality of the Codere test app.
 
 ## Development
 
-- Set up Appium Inspector to discover element locators
+- Appium Inspector
+  - Use it to discover element locators with the following parameters:
+    - appium:automationName = "UiAutomator2"
+    - appium:platformName = "Android"
+  - Start Session once the Appium server is running (see below)
 
 ## Set Up
 

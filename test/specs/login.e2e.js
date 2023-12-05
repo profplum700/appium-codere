@@ -1,7 +1,10 @@
 import { config } from 'dotenv';
+import { expect } from 'chai';
 import { remote } from 'webdriverio';
 
 config();
+
+const waitTimeInMs = 400000;
 
 describe('My Tests', function () {
     this.timeout(60000);
@@ -21,8 +24,10 @@ describe('My Tests', function () {
             }
         });
 
-        const titleBar = await driver.$('android=new UiSelector().resourceId("id/nav")');
-        await titleBar.waitForDisplayed(30000);
+        await driver.$('android=new UiSelector().resourceId("//android.widget.Button[@text="Acceder"]")')
+            .waitUntil(async function () {
+                return (await this.getText()) === 'Acceder';
+            }, waitTimeInMs);
 
         let cookiesPopup = await driver.$('android=new UiSelector().text("Configuración de cookies")');
         if (await cookiesPopup.isDisplayed()) {
